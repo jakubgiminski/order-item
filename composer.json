@@ -1,0 +1,14 @@
+{
+    "name": "jakubgiminski/order-item",
+    "description": "Order Item is a RESTful API dedicated to managing orders and items.",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "authors": [
+        {
+            "name": "Jakub Giminski",
+            "email": "jakubgiminski@gmail.com"
+        }
+    ]
+}
