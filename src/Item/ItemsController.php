@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace OrderItem\Item;
 
-use Framework\Controller;
 use Framework\Request;
 
-class ItemsController implements Controller
+class ItemsController
 {
     private $itemsRepository;
 
