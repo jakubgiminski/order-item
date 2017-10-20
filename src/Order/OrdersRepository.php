@@ -5,6 +5,7 @@ namespace OrderItem\Item;
 
 use OrderItem\Order\Order;
 use OrderItem\Order\OrdersCollection;
+use Ramsey\Uuid\Uuid;
 
 class OrdersRepository
 {
@@ -18,7 +19,7 @@ class OrdersRepository
         $orders = new OrdersCollection();
 
         for ($i = 0; $i < 10; $i++) {
-            $orders->addOrder(new Order(sha1(random_int(1, 1000))));
+            $orders->addOrder(new Order(Uuid::uuid1()->toString()));
         }
 
         return $orders;

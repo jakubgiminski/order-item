@@ -16,5 +16,8 @@
             "OrderItem\\": "src",
             "Framework\\": "framework"
         }
+    },
+    "require": {
+        "ramsey/uuid": "^3.7"
     }
 }
