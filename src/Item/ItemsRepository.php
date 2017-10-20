@@ -14,7 +14,7 @@ class ItemsRepository
     {
         $items = new ItemsCollection();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $items->addItem(new Item(sha1(random_int(1, 1000))));
         }
 

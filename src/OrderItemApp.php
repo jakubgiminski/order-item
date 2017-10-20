@@ -21,4 +21,11 @@ class OrderItemApp implements App
     {
         return $this->routes;
     }
+
+    public function setRoutes(array $routes): void
+    {
+        foreach ($routes as $route) {
+            $this->addRoute($route);
+        }
+    }
 }

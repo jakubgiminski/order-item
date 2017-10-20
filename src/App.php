@@ -9,4 +9,5 @@ interface App
 {
     public function addRoute(Route $route): void;
     public function getRoutes(): array;
+    public function setRoutes(array $routes): void;
 }

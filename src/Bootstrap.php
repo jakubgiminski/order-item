@@ -5,21 +5,15 @@ namespace OrderItem;
 
 use Framework\Route;
 use OrderItem\Item\ItemsController;
+use OrderItem\Item\OrdersController;
 
 $app = new OrderItemApp();
 
-$app->addRoute(
-    Route::get(
-        'items',
-        ItemsController::class,
-        'getAll'
-    )
-);
+$routes = [
+    Route::get('items', ItemsController::class, 'getAll'),
+    Route::get('items/{item_id}', ItemsController::class, 'getOne'),
+    Route::get('orders', OrdersController::class, 'getAll'),
+    Route::get('orders/{order_id}', OrdersController::class, 'getOne'),
+];
 
-$app->addRoute(
-    Route::get(
-        'items/{item_id}',
-        ItemsController::class,
-        'getOne'
-    )
-);
+$app->setRoutes($routes);
