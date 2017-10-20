@@ -1,7 +1,7 @@
 <?php
-namespace OrderItem;
+declare(strict_types=1);
 
-use Framework\Route;
+namespace OrderItem;
 
 class OrderItemApp implements App
 {
@@ -9,23 +9,11 @@ class OrderItemApp implements App
 
     public function __construct()
     {
-        $this->routes = [];
-    }
-
-    public function addRoute(Route $route): void
-    {
-        $this->routes[] = $route;
+        $this->routes = include __DIR__ . '/routes.php';
     }
 
     public function getRoutes(): array
     {
         return $this->routes;
-    }
-
-    public function setRoutes(array $routes): void
-    {
-        foreach ($routes as $route) {
-            $this->addRoute($route);
-        }
     }
 }

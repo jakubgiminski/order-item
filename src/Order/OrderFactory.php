@@ -10,10 +10,16 @@ class OrderFactory
 {
     public function createFromItems(ItemsCollection $itemsCollection): Order
     {
+        if ($itemsCollection->isEmpty()) {
+            throw OrderFactoryException::emptyItemsCollection();
+        }
+
         $order = new Order(Uuid::uuid1()->toString());
+
         foreach ($itemsCollection->getItems() as $item) {
             $order->addItem($item);
         }
+
         return $order;
     }
 }
