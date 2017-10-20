@@ -10,5 +10,11 @@
             "name": "Jakub Giminski",
             "email": "jakubgiminski@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "OrderItem\\": "src",
+            "Framework\\": "framework"
+        }
+    }
 }
