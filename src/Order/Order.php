@@ -5,8 +5,9 @@ namespace OrderItem\Order;
 
 use OrderItem\Item\Item;
 use OrderItem\Item\ItemsCollection;
+use PseudoFramework\Entity;
 
-class Order
+class Order implements Entity
 {
     private $id;
 

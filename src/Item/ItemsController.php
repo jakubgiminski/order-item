@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace OrderItem\Item;
 
-use Framework\Request;
+use PseudoFramework\Request\Request;
 
 class ItemsController
 {

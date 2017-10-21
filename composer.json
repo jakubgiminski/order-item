@@ -13,11 +13,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "OrderItem\\": "src",
-            "Framework\\": "framework"
+            "OrderItem\\": "src"
         }
     },
     "require": {
-        "ramsey/uuid": "^3.7"
+        "ramsey/uuid": "^3.7",
+        "jakubgiminski/pseudo-framework": "^1.0"
     }
 }

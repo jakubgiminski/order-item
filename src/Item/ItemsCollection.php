@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace OrderItem\Item;
 
-class ItemsCollection
+use PseudoFramework\Arrayable;
+
+class ItemsCollection implements Arrayable
 {
     private $items;
 
@@ -25,5 +27,10 @@ class ItemsCollection
     public function isEmpty(): bool
     {
         return count($this->items) === 0;
+    }
+
+    public function toArray(): array
+    {
+        return $this->getItems();
     }
 }

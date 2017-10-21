@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace OrderItem\Item;
 
-class Item
+use PseudoFramework\Entity;
+
+class Item implements Entity
 {
     private $id;
 

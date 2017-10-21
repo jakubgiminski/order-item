@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace OrderItem\Order;
 
-class OrdersCollection
+use PseudoFramework\Arrayable;
+
+class OrdersCollection implements Arrayable
 {
     private $orders;
 
@@ -20,5 +22,10 @@ class OrdersCollection
     public function addOrder(Order $order): void
     {
         $this->orders[] = $order;
+    }
+
+    public function toArray(): array
+    {
+        return $this->orders;
     }
 }
