@@ -30,4 +30,13 @@ class ItemsController
         $items = $this->itemsRepository->getAll();
         return new CollectionResponse($items);
     }
+
+    public function getAllFromOrder(Request $request): CollectionResponse
+    {
+        $items = $this->itemsRepository->getAllFromOrder(
+            $request->getParameter('order_id')
+        );
+
+        return new CollectionResponse($items);
+    }
 }
