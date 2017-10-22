@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace OrderItemTest\Functional;
+namespace OrderItemTest\Functional\Controller;
 
 use OrderItem\Item\Item;
 use OrderItem\Item\ItemsCollection;
