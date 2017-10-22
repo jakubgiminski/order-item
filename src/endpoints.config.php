@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 use OrderItem\Item\ItemsController;
-use OrderItem\Item\OrdersController;
+use OrderItem\Order\OrdersController;
 use PseudoFramework\Http\Endpoint;
 
 return [
