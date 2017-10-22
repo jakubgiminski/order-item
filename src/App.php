@@ -9,7 +9,7 @@ class App
 
     public function __construct()
     {
-        $this->routes = include __DIR__ . '/endpoints.config.php';
+        $this->endpoints = include __DIR__ . '/endpoints.config.php';
     }
 
     public function getEndpoints(): array

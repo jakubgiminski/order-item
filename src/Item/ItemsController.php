@@ -17,7 +17,7 @@ class ItemsController
     public function getOne(Request $request): Item
     {
         return $this->itemsRepository->getOne(
-            $request->getArgument('item_id')
+            $request->getParameter('item_id')
         );
     }
 
