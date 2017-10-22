@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = new OrderItem\App();
 
-foreach ($app->getRoutes() as $route) {
-    echo "{$route->getMethod()->getValue()} : {$route->getUrl()} -> {$route->getActionName()}@{$route->getControllerName()}";
+foreach ($app->getEndpoints() as $endpoint) {
+    echo "{$endpoint->getMethod()->getValue()} : {$endpoint->getUrl()} -> {$endpoint->getActionName()}@{$endpoint->getControllerName()}";
     echo PHP_EOL;
 }

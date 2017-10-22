@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace OrderItem\Item;
+namespace OrderItem\Order;
 
-use OrderItem\Order\Order;
-use OrderItem\Order\OrdersCollection;
 use Ramsey\Uuid\Uuid;
 
 class OrdersRepository
 {
+    const NUM_ALL_ORDERS = 10;
+
     public function getOne(string $id): Order
     {
         return new Order($id);
@@ -18,7 +18,7 @@ class OrdersRepository
     {
         $orders = new OrdersCollection();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < self::NUM_ALL_ORDERS; $i++) {
             $orders->addOrder(new Order(Uuid::uuid1()->toString()));
         }
 

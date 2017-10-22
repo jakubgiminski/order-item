@@ -13,7 +13,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "OrderItem\\": "src"
+            "OrderItem\\": "src",
+            "OrderItemTest\\": "tests"
         }
     },
     "require": {

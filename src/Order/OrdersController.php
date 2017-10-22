@@ -1,28 +1,33 @@
 <?php
 declare(strict_types=1);
 
-namespace OrderItem\Item;
+namespace OrderItem\Order;
 
 use PseudoFramework\Request\Request;
+use PseudoFramework\Response\CollectionResponse;
+use PseudoFramework\Response\EntityResponse;
 
 class OrdersController
 {
     private $ordersRepository;
 
-    public function __construct(ItemsRepository $ordersRepository)
+    public function __construct(OrdersRepository $ordersRepository)
     {
         $this->ordersRepository = $ordersRepository;
     }
 
-    public function getOne(Request $request): Item
+    public function getOne(Request $request): EntityResponse
     {
-        return $this->ordersRepository->getOne(
+        $order = $this->ordersRepository->getOne(
             $request->getParameter('order_id')
         );
+
+        return new EntityResponse($order);
     }
 
-    public function getAll(): ItemsCollection
+    public function getAll(): CollectionResponse
     {
-        return $this->ordersRepository->getAll();
+        $orders = $this->ordersRepository->getAll();
+        return new CollectionResponse($orders);
     }
 }

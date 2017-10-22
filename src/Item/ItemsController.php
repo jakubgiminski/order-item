@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace OrderItem\Item;
 
 use PseudoFramework\Request\Request;
+use PseudoFramework\Response\CollectionResponse;
+use PseudoFramework\Response\EntityResponse;
 
 class ItemsController
 {
@@ -14,15 +16,18 @@ class ItemsController
         $this->itemsRepository = $itemsRepository;
     }
 
-    public function getOne(Request $request): Item
+    public function getOne(Request $request): EntityResponse
     {
-        return $this->itemsRepository->getOne(
+        $item = $this->itemsRepository->getOne(
             $request->getParameter('item_id')
         );
+
+        return new EntityResponse($item);
     }
 
-    public function getAll(): ItemsCollection
+    public function getAll(): CollectionResponse
     {
-        return $this->itemsRepository->getAll();
+        $items = $this->itemsRepository->getAll();
+        return new CollectionResponse($items);
     }
 }
