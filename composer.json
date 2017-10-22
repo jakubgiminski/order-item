@@ -18,6 +18,7 @@
     },
     "require": {
         "ramsey/uuid": "^3.7",
-        "jakubgiminski/pseudo-framework": "^1.0"
+        "jakubgiminski/pseudo-framework": "^1.0",
+        "league/container": "^2.4"
     }
 }

@@ -3,7 +3,17 @@ declare(strict_types=1);
 
 namespace OrderItem;
 
-interface App
+class App
 {
-    public function getRoutes(): array;
+    private $endpoints;
+
+    public function __construct()
+    {
+        $this->routes = include __DIR__ . '/endpoints.config.php';
+    }
+
+    public function getEndpoints(): array
+    {
+        return $this->endpoints;
+    }
 }
