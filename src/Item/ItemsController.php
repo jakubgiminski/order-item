@@ -3,11 +3,12 @@ declare(strict_types=1);
 
 namespace OrderItem\Item;
 
+use PseudoFramework\Controller;
 use PseudoFramework\Request\Request;
 use PseudoFramework\Response\CollectionResponse;
 use PseudoFramework\Response\EntityResponse;
 
-class ItemsController
+class ItemsController implements Controller
 {
     private $itemsRepository;
 
