@@ -24,6 +24,11 @@ class Order implements Entity
         return $this->id;
     }
 
+    public function setItems(ItemsCollection $items): void
+    {
+        $this->items = $items;
+    }
+
     public function addItem(Item $item): void
     {
         $this->items->addItem($item);
