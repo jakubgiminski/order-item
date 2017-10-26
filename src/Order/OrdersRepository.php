@@ -7,10 +7,11 @@ use Ramsey\Uuid\Uuid;
 
 class OrdersRepository
 {
-    const NUM_ALL_ORDERS = 10;
+    public const NUM_ALL_ORDERS = 10;
 
     public function getOne(string $id): Order
     {
+        // getting order...
         return new Order($id);
     }
 
@@ -18,10 +19,17 @@ class OrdersRepository
     {
         $orders = new OrdersCollection();
 
+        // getting orders...
         for ($i = 0; $i < self::NUM_ALL_ORDERS; $i++) {
             $orders->addOrder(new Order(Uuid::uuid1()->toString()));
         }
 
         return $orders;
+    }
+
+    public function save(Order $order): Order
+    {
+        // saving order...
+        return $order;
     }
 }
