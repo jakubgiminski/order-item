@@ -7,12 +7,13 @@ use Ramsey\Uuid\Uuid;
 
 class ItemsRepository
 {
-    const NUM_ALL_ITEMS = 50;
+    public const NUM_ALL_ITEMS = 50;
 
-    const NUM_ORDER_ITEMS = 15;
+    public const NUM_ORDER_ITEMS = 15;
 
     public function getOne(string $id): Item
     {
+        // getting item...
         return new Item($id);
     }
 
@@ -20,6 +21,7 @@ class ItemsRepository
     {
         $items = new ItemsCollection();
 
+        // getting items...
         for ($i = 0; $i < self::NUM_ALL_ITEMS; $i++) {
             $items->addItem(new Item(Uuid::uuid1()->toString()));
         }
@@ -31,10 +33,17 @@ class ItemsRepository
     {
         $items = new ItemsCollection();
 
+        // getting items...
         for ($i = 0; $i < self::NUM_ORDER_ITEMS; $i++) {
             $items->addItem(new Item(Uuid::uuid1()->toString(), $orderId));
         }
 
         return $items;
+    }
+
+    public function save(Item $item): Item
+    {
+        // saving item...
+        return $item;
     }
 }
